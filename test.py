@@ -10,17 +10,17 @@ tg_token = '842308578:AAHu6MUSeIsfFOhOVJ6R9QsYxcN1so7qLM4'
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id, text="Привет, мешок! День сегодня говно и ты тоже, но тут когда-нибудь можно будет взять кофе. Здоровайся со мной епта!")
+    context.bot.send_message(chat_id=update.message.chat_id, text="Привет, Соня")
 
 def hi(update, context):
     current_user = update.effective_user
     if (update.message.text == 'привет'or update.message.text == 'Привет' 
         or update.message.text =='Здравствуй' or update.message.text =='Здравствуйте'):
         context.bot.send_message(chat_id=current_user.id, 
-            text='Отлично. Наверное, тут стоит ебануть меню или картинку с меню, чтобы типа можно было выбрать')
+            text='О! Привет!!111 Как день?')
     else:
         context.bot.send_message(chat_id=current_user.id, 
-            text=', а не хуйню пиши, здоровайся это привет, здравствуйте')
+            text='Не грусти, работа это хуйня, тебя все равно все любят')
 
 def unknown(update, context):
     context.bot.send_message(chat_id=update.effective_user.id, text="Sorry, I didn't understand that command.")
