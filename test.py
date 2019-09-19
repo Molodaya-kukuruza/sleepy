@@ -15,12 +15,12 @@ def start(update, context):
 def hi(update, context):
     current_user = update.effective_user
     if (update.message.text == 'привет'or update.message.text == 'Привет' 
-    	or update.message.text =='Здравствуй' or update.message.text =='Здравствуйте'):
+        or update.message.text =='Здравствуй' or update.message.text =='Здравствуйте'):
         context.bot.send_message(chat_id=current_user.id, 
-        	text='Отлично. Наверное, тут стоит ебануть меню или картинку с меню, чтобы типа можно было выбрать')
+            text='Отлично. Наверное, тут стоит ебануть меню или картинку с меню, чтобы типа можно было выбрать')
     else:
         context.bot.send_message(chat_id=current_user.id, 
-        	text='Поздоровайся говорю, а не хуйню пиши, здоровайся это привет, здравствуйте')
+            text=', а не хуйню пиши, здоровайся это привет, здравствуйте')
 
 def unknown(update, context):
     context.bot.send_message(chat_id=update.effective_user.id, text="Sorry, I didn't understand that command.")
