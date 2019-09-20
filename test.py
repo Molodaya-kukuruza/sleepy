@@ -1,5 +1,7 @@
 from telegram.ext import Updater, CommandHandler
 from telegram.ext import MessageHandler, Filters
+from telegram import ReplyKeyboardMarkup
+from telegram import ReplyKeyboardRemove
 print('PIZDA')
 #import logging
 #import urllib3
@@ -14,9 +16,15 @@ def start(update, context):
 
 def hi(update, context):
     current_user = update.effective_user
+    #user_markup = ReplyKeyboardMarkup([['1'], ['2']])
     if (update.message.text == 'Хочу кофе'or update.message.text == 'хочу кофе'):
         context.bot.send_message(chat_id=current_user.id, 
-            text='О! Привет!!111 Как день?')
+            text='Менюха списком')
+        context.bot.send_message(chat_id=current_user.id, 
+            text='бля', reply_markup=ReplyKeyboardMarkup([['1'], ['2']]))
+    elif (update.message.text.isdigit()):
+        context.bot.send_message(chat_id=current_user.id, 
+             text='Понел', reply_markup=ReplyKeyboardRemove(True))
     else:
         context.bot.send_message(chat_id=current_user.id, 
             text='если не хочешь кофе, то иди нахуй')
@@ -37,9 +45,9 @@ def main():
     unknown_handler = MessageHandler(Filters.command, unknown)
     dp.add_handler(unknown_handler)
 
-    #update.start_polling()
-    #update.idle()
-    update.stop()
+    update.start_polling()
+    update.idle()
+    #update.stop()
 
 
 if __name__ == '__main__':
