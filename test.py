@@ -1,10 +1,10 @@
 from telegram.ext import Updater, CommandHandler
 from telegram.ext import MessageHandler, Filters
 print('PIZDA')
-#import logging
-#import urllib3
-#logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-#                     level=logging.INFO)
+import logging
+import urllib3
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                     level=logging.INFO)
 
 tg_token = '842308578:AAHu6MUSeIsfFOhOVJ6R9QsYxcN1so7qLM4'
 
