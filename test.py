@@ -10,17 +10,16 @@ tg_token = '842308578:AAHu6MUSeIsfFOhOVJ6R9QsYxcN1so7qLM4'
 
 
 def start(update, context):
-    context.bot.send_message(chat_id=update.message.chat_id, text="Привет, Соня")
+    context.bot.send_message(chat_id=update.message.chat_id, text="Привет! красивый текст всем добра, пиши хочу кофе")
 
 def hi(update, context):
     current_user = update.effective_user
-    if (update.message.text == 'привет'or update.message.text == 'Привет' 
-        or update.message.text =='Здравствуй' or update.message.text =='Здравствуйте'):
+    if (update.message.text == 'Хочу кофе'or update.message.text == 'хочу кофе'):
         context.bot.send_message(chat_id=current_user.id, 
             text='О! Привет!!111 Как день?')
     else:
         context.bot.send_message(chat_id=current_user.id, 
-            text='Не грусти, работа это хуйня, тебя все равно все любят')
+            text='если не хочешь кофе, то иди нахуй')
 
 def unknown(update, context):
     context.bot.send_message(chat_id=update.effective_user.id, text="Sorry, I didn't understand that command.")
@@ -38,8 +37,9 @@ def main():
     unknown_handler = MessageHandler(Filters.command, unknown)
     dp.add_handler(unknown_handler)
 
-    update.start_polling()
-    update.idle()
+    #update.start_polling()
+    #update.idle()
+    update.stop()
 
 
 if __name__ == '__main__':
