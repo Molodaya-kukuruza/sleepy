@@ -21,7 +21,7 @@ def hi(update, context):
         context.bot.send_message(chat_id=current_user.id, 
             text='Менюха списком')
         context.bot.send_message(chat_id=current_user.id, 
-            text='Выбирай', reply_markup=ReplyKeyboardMarkup([['1'], ['2'], ['3'], ['4'], ['5'], ['6'], ['7'], ['8'], ['Другое']]))
+            text='Выбирай', reply_markup=ReplyKeyboardMarkup([['1'], ['2']]))
     elif (update.message.text.isdigit()):
         context.bot.send_message(chat_id=current_user.id, 
              text='Понел', reply_markup=ReplyKeyboardRemove(True))
