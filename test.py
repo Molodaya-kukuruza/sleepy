@@ -21,7 +21,7 @@ def hi(update, context):
         context.bot.send_message(chat_id=current_user.id, 
             text='Менюха списком')
         context.bot.send_message(chat_id=current_user.id, 
-            text='Выбирай', reply_markup=ReplyKeyboardMarkup([['1'], ['2']]))
+            text='Выбирай', reply_markup=ReplyKeyboardMarkup([['1'], ['2'], ['3'], ['Другое']]))
     elif (update.message.text.isdigit()):
         context.bot.send_message(chat_id=current_user.id, 
              text='Понел', reply_markup=ReplyKeyboardRemove(True))
@@ -45,9 +45,9 @@ def main():
     unknown_handler = MessageHandler(Filters.command, unknown)
     dp.add_handler(unknown_handler)
 
-    #update.start_polling()
-    #update.idle()
-    update.stop()
+    update.start_polling()
+    update.idle()
+    #update.stop()
 
 
 if __name__ == '__main__':
