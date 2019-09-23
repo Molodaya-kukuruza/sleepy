@@ -45,9 +45,9 @@ def main():
     unknown_handler = MessageHandler(Filters.command, unknown)
     dp.add_handler(unknown_handler)
 
-    update.start_polling()
-    update.idle()
-    #update.stop()
+    #update.start_polling()
+    #update.idle()
+    update.stop()
 
 
 if __name__ == '__main__':
